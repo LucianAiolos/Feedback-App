@@ -14,7 +14,7 @@ function App() {
     if(window.confirm('are you sure you wwant to delete?')) {
       setFeedback(feedback.filter((item)=> item.id !== id))
     }
-  }
+  } 
 
   return (
     <>
