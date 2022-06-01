@@ -9,9 +9,9 @@ function Button({ children, version, type, isDisabled}) {
 }
 
 Button.defaultProps = {
-  verison: 'primary',
+  version: 'primary',
   type: 'button',
-  isDisabled: false
+  isDisabled: false,
 }
 
 Button.propTypes = {

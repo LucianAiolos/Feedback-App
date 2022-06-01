@@ -4,6 +4,7 @@ import FeedbackList from "./components/FeedbackList"
 import FeedbackStats from './components/FeedbackStats'
 import Header from "./components/Header"
 import FeedbackData from './data/feedbackData'
+import { v4 as uuidv4 } from 'uuid'
 
 
 
@@ -16,10 +17,15 @@ function App() {
     }
   } 
 
+  const addFeedback = (newFeedback) => {
+    newFeedback.id = uuidv4()
+    setFeedback([newFeedback, ...feedback])
+  }
+
   return (
     <>
       <Header />
-      <FeedbackFrom />
+      <FeedbackFrom handleAdd={addFeedback} />
       <FeedbackStats feedback={feedback}/>
       <FeedbackList 
         feedback={feedback} 
