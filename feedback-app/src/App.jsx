@@ -7,6 +7,7 @@ import Header from "./components/Header"
 import FeedbackData from './data/feedbackData'
 import { v4 as uuidv4 } from 'uuid'
 import AboutPage from './components/pages/AboutPage'
+import AboutIconLink from './components/AboutIconLink'
 
 
 
@@ -41,6 +42,7 @@ function App() {
           </Route>
           <Route path='/about' element={<AboutPage/>} />
         </Routes>
+        <AboutIconLink />
       </div>
     </Router>
     
