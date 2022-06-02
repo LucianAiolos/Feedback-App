@@ -11,8 +11,15 @@ export const FeedbackProvider = ({ children }) => {
     }
   ])
 
+  const deleteFeedback = (id) => {
+      if(window.confirm('are you sure you wwant to delete?')) {
+        setFeedback(feedback.filter((item)=> item.id !== id))
+      }
+    } 
+
   return <FeedbackContext.Provider value={{
-    feedback
+    feedback,
+    deleteFeedback,
   }}>
     {children}
   </FeedbackContext.Provider>
