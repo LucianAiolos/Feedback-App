@@ -47,6 +47,7 @@ function FeedbackFrom() {
       addFeedback(newFeedback)
       }
       setText('')
+      setRating(10)
     }
   }
 
@@ -54,7 +55,7 @@ function FeedbackFrom() {
     <Card>
       <form onSubmit={handleSubmit}>
       <h2>How would you rate your service with us?</h2>
-      <RatingSelect select={ (rating)=> setRating(rating) } />
+      <RatingSelect select={setRating } />
       <div className="input-group">
         <input type="text" placeholder='write a review' onChange={handleTextChange} value={text}/>
        <Button type='submit' isDisabled={btnDisabled}>Send</Button>
