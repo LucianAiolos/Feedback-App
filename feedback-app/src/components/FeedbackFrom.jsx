@@ -47,6 +47,7 @@ function FeedbackFrom() {
       addFeedback(newFeedback)
       }
       setText('')
+      setRating(10)
     }
   }
 
