@@ -1,0 +1,19 @@
+{
+  "feeback": [
+    {
+      "id": 1,
+      "rating": 10,
+      "text": "This is fedback item 1 from backend"
+    },
+    {
+      "id": 2,
+      "rating": 9,
+      "text": "This is fedback item 2 from backend"
+    },
+    {
+      "id": 3,
+      "rating": 8,
+      "text": "This is fedback item 3 from backend"
+    }
+  ]
+}
