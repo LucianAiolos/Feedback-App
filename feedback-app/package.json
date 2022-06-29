@@ -3,7 +3,7 @@
   "homepage": "https://lucianaiolos.github.io/Feedback-App/",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:3210",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
@@ -28,7 +28,7 @@
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch db.json --port 5000",
+    "server": "json-server --watch db.json --port 3210",
     "dev": "concurrently \"npm run server\" \"npm start\""
   },
   "eslintConfig": {
