@@ -1,5 +1,6 @@
 {
   "name": "feedback-app",
+  "homepage": "https://lucianaiolos.github.io/Feedback-App/",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:5000",
@@ -9,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "concurrently": "^7.2.1",
     "framer-motion": "^4.1.17",
+    "gh-pages": "^4.0.0",
     "json-server": "^0.17.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -22,6 +24,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json --port 5000",
