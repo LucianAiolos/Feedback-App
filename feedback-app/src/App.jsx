@@ -10,6 +10,14 @@ import AboutPage from './components/pages/AboutPage'
 import AboutIconLink from './components/AboutIconLink'
 import { FeedbackProvider } from './components/context/FeedbackContext'
 
+// 
+// 
+// 
+// NPM RUN DEV ******************* NOT NPM START
+// 
+// 
+
+
 function App() {
   // const [feedback, setFeedback] = useState(FeedbackData)
 
@@ -30,7 +38,7 @@ function App() {
           <Header />
           <div className="container">
             <Routes >
-              <Route exact path='/feedback-app' element={
+              <Route exact path='/Feedback-App' element={
                 <>
                   <FeedbackFrom />
                   <FeedbackStats />
