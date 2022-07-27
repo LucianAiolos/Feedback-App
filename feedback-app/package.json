@@ -3,7 +3,7 @@
   "homepage": "https://lucianaiolos.github.io/Feedback-App/",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3210",
+  "proxy": "https://my-json-server.typicode.com/LucianAiolos/JSON-Server",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
