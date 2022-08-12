@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState, useRef } from 'react'
 // import { v4 as uuidv4 } from 'uuid'
 
 const FeedbackContext = createContext()
@@ -11,15 +11,21 @@ export const FeedbackProvider = ({ children }) => {
     edit: false
   })
 
+  const mounted = useRef(true)
+
   useEffect(()=> {
-    fetchFeedback()
+    if(mounted.current) {
+      mounted.current = false
+      fetchFeedback()
+    }
+    
   }, [])
 
   // Fetch Feedback
   const fetchFeedback = async () => {
-    const res = await fetch(`https://my-json-server.typicode.com/lucianaiolos/json-server/feedback`)
+    const res = await fetch(`https://my-json-server.typicode.com/lucianaiolos/json-server/feedback?_sort=id&desc`)
     const data = await res.json()
-
+    
     setFeedback(data)
     setIsLoading(false)
   }
@@ -27,7 +33,8 @@ export const FeedbackProvider = ({ children }) => {
   //Delete feedback
   const deleteFeedback = async (id) => {
       if(window.confirm('are you sure you want to delete?')) {
-        await fetch(`/feedback/${id}`, {method: 'DELETE'})
+        await fetch(`https://my-json-server.typicode.com/lucianaiolos/json-server/feedback/${id}`, 
+          {method: 'DELETE'})
 
         setFeedback(feedback.filter((item)=> item.id !== id))
       }
@@ -36,7 +43,8 @@ export const FeedbackProvider = ({ children }) => {
 
   //Add Feedback
   const addFeedback = async (newFeedback) => {
-    const response = await fetch('/feedback', {
+    console.log('hi')
+    const response = await fetch(`https://my-json-server.typicode.com/lucianaiolos/json-server/feedback`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
@@ -46,7 +54,9 @@ export const FeedbackProvider = ({ children }) => {
     const data = await response.json()
 
     // newFeedback.id = uuidv4()
+    console.log(feedback)
     setFeedback([data, ...feedback])
+    console.log(feedback)
   }
 
 
